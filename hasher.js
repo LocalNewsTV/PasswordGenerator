@@ -49,9 +49,9 @@ try{
   if (/\d/.test(generatedPassword)){
   } else {
     const half = generatedPassword.length / 2;
-    passwithnum = generatedPassword.slice(0, half) + getNum(generatedPassword[half]) + generatedPassword.slice(half);
+    generatedPassword = generatedPassword.slice(0, half) + getNum(generatedPassword[half]) + generatedPassword.slice(half);
   }
-  console.log(passwithnum)
+  console.log(generatedPassword)
 } catch (ex) {
   console.log(ex)
 }
