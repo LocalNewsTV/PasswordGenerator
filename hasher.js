@@ -47,13 +47,11 @@ try{
   let generatedPassword = generatePassword()
 
   if (/\d/.test(generatedPassword)){
-    console.log(generatedPassword);
   } else {
-    console.log(generatedPassword)
     const half = generatedPassword.length / 2;
     passwithnum = generatedPassword.slice(0, half) + getNum(generatedPassword[half]) + generatedPassword.slice(half);
-    console.log(passwithnum)
   }
+  console.log(passwithnum)
 } catch (ex) {
   console.log(ex)
 }
