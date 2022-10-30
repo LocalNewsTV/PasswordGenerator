@@ -48,7 +48,7 @@ export class PasswordGenerator {
       throw `Password must be greater than ${this._MIN_PASS_LENGTH} characters without whitespace`;
     } 
     else if (plaintext.length > this._MAX_PASS_LENGTH){
-      throw `Password must be less than or greater to ${this._MAX_PASS_LENGTH}`;
+      throw `Password must be <= ${this._MAX_PASS_LENGTH} characters`;
     }
     for(let i = 0; i < 3; i++){
         plaintext = this._hashPassword(plaintext);
