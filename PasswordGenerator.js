@@ -18,8 +18,9 @@ export class PasswordGenerator {
     "1", "2", "3", "4", "5",
     "6", "7", "8", "9", "0"
   ]
-  constructor(MIN_PASS_LENGTH){
+  constructor(MIN_PASS_LENGTH, MAX_PASS_LENGTH){
     this._MIN_PASS_LENGTH = MIN_PASS_LENGTH;
+    this._MAX_PASS_LENGTH = MAX_PASS_LENGTH;
   }
   _hashPassword = (plaintext) => {
     const skipVal = this._stringArray.indexOf(plaintext.charAt(0));
@@ -45,6 +46,9 @@ export class PasswordGenerator {
     plaintext = plaintext.replace(/\s/g, "");
     if(plaintext.length < this._MIN_PASS_LENGTH){
       throw `Password must be greater than ${this._MIN_PASS_LENGTH} characters without whitespace`;
+    } 
+    else if (plaintext.length > this._MAX_PASS_LENGTH){
+      throw `Password must be less than or greater to ${this._MAX_PASS_LENGTH}`;
     }
     for(let i = 0; i < 3; i++){
         plaintext = this._hashPassword(plaintext);

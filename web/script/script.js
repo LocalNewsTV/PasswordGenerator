@@ -1,7 +1,7 @@
 import {PasswordGenerator} from "../../PasswordGenerator.js";
 
 
-const password = new PasswordGenerator(6);
+const password = new PasswordGenerator(6, 21);
 
 const createPassword = () => {
   try{
