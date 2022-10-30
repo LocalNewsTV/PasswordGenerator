@@ -19,7 +19,7 @@ let numArray = [
  *  more secure password
  **************************************************/
 const getNum = (char) => {
-  return numArray[stringArray.indexOf(char) % numArray.length]
+  return numArray[(stringArray.indexOf(char)) % numArray.length]
 }
 const generatePassword = () => {
     if(process.argv.length < 3){
@@ -45,11 +45,9 @@ const generatePassword = () => {
 
 try{
   let generatedPassword = generatePassword()
-
-  if (/\d/.test(generatedPassword)){
-  } else {
+  if (!(/\d/.test(generatedPassword))){
     const half = generatedPassword.length / 2;
-    generatedPassword = generatedPassword.slice(0, half) + getNum(generatedPassword[half]) + generatedPassword.slice(half);
+    generatedPassword = generatedPassword.slice(0, half) + getNum(generatedPassword.charAt(half)) + generatedPassword.slice(half);
   }
   console.log(generatedPassword)
 } catch (ex) {
