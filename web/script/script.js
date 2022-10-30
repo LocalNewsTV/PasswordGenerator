@@ -24,3 +24,13 @@ document.getElementById('plaintext').addEventListener('keypress', (e) =>{
 document.getElementById('action').addEventListener('click', () => {
   createPassword();
 });
+
+document.getElementById('copy').addEventListener('click', () => {
+  const copyComplete = () => {
+    document.getElementById('copy').innerHTML = "Copied";
+    setTimeout(() => {document.getElementById('copy').innerHTML = "Copy"}, 2000);
+  }
+  let value = document.getElementById('cipherText').innerHTML;
+  navigator.clipboard.writeText(value.replace("&amp;", "&"));
+  copyComplete();
+});
