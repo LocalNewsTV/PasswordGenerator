@@ -5,7 +5,7 @@ const password = new PasswordGenerator(6);
 
 const createPassword = () => {
   try{
-    plaintext = document.getElementById('plaintext').value
+    const plaintext = document.getElementById('plaintext').value
     if(plaintext.length < 6){
       document.getElementById('cipherText').innerHTML = "Password must be 6 characters or more";
     }
