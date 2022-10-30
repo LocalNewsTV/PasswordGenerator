@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Password Scrambler for a more secure password">
+    <meta name="keywords" content="Password, Management, Creation, Security, Github, Student Developer">
+    <meta name="author" content="Matthew Logan, LocalNewsTV">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./web/style/style.css">
     <link rel="shortcut icon" href="./web/images/lock.svg">
     <title>Password Generator</title>
@@ -8,12 +13,14 @@
   <body>
     <div id="generator">
       <div id="main">
-        <div>
+        <div class="flex col">
           <h1>Password Generator!</h1>
-          <label for="plaintext">Phrase: </label>
-          <input type="text" id="plaintext">
-          <span id="action">Cipher My Text</span>
-          <div id="cipherspace">
+          <div>
+            <label for="plaintext">Phrase: </label>
+            <input type="text" id="plaintext">
+            <span id="action">Enhance my password</span>
+          </div>
+          <div class="flex" id="cipherspace">
             <p id="cipherText"></p>
           </div>
         </div>
