@@ -29,7 +29,7 @@ export class PasswordGenerator {
       if(i == plaintext.length / 2){
         hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + skipVal) % this._stringArray.length].toUpperCase();
       } else if(i % 2 == 0){
-        hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + skipVal) % this._stringArray.length];
+        hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + skipVal * i) % this._stringArray.length];
       } else {
         hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + (skipVal + (i * i))) % this._stringArray.length].toUpperCase();
       }
