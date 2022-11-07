@@ -43,12 +43,15 @@ input{
   padding: 8px;
   border: 1px solid black;
 }
-#action{
+#action, #showHide{
   background: black;
   border: 1px solid black;
   border-radius: 10px;
   color: white;
   padding: 8px;
+}
+#showHide {
+  width: 50px;
 }
 #action:hover{
   color: lightslategray;

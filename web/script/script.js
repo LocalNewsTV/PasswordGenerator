@@ -21,6 +21,14 @@ document.getElementById('plaintext').addEventListener('keypress', (e) =>{
     createPassword();
   }
 })
+
+document.getElementById('showHide').addEventListener('click', ()=>{
+  let pT = document.getElementById('plaintext');
+  pT.getAttribute('type') == "password" ? pT.setAttribute('type', 'text') : pT.setAttribute('type', 'password');
+  showHide = document.getElementById('showHide');
+  showHide.innerHTML = showHide.innerHTML == 'Show' ? "Hide" : "Show"; 
+});
+
 document.getElementById('action').addEventListener('click', () => {
   createPassword();
 });
