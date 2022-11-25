@@ -22,16 +22,17 @@ export class PasswordGenerator {
     this._MIN_PASS_LENGTH = MIN_PASS_LENGTH;
     this._MAX_PASS_LENGTH = MAX_PASS_LENGTH;
   }
+  
   _hashPassword = (plaintext) => {
-    const skipVal = this._stringArray.indexOf(plaintext.charAt(0));
+    const skipVal = [...plaintext].reduce((total,letter)=> total += this._stringArray.indexOf(letter), 0);
     let hashedString = '';
     for(let i = 0; i < plaintext.length; i++){
       if(i == plaintext.length / 2){
         hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + skipVal) % this._stringArray.length].toUpperCase();
       } else if(i % 2 == 0){
-        hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + skipVal * i) % this._stringArray.length];
+        hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + skipVal * (i+2)) % this._stringArray.length];
       } else {
-        hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + (skipVal + (i * i))) % this._stringArray.length].toUpperCase();
+        hashedString += this._stringArray[(this._stringArray.indexOf(plaintext.charAt(i)) + (skipVal + (i * (i+1)))) % this._stringArray.length].toUpperCase();
       }
     } 
     return hashedString;
