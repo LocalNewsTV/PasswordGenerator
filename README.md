@@ -1,3 +1,5 @@
+# Password Generator
+
 A simple ciphering algorithm to hash poor passwords into better passwords. 
 
 I made this for people who struggle to create stronger passwords and rely on the simpler "Password1" era of times. 
